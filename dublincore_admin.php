@@ -26,23 +26,23 @@
 		<input type="checkbox" name="format" <?PHP if(trim(get_option("dc_format"))=="true"){ echo "checked"; } ?> /> DC:Format <br />
 		<input type="checkbox" name="language" <?PHP if(trim(get_option("dc_language"))=="true"){ echo "checked"; } ?> /> DC:Language <br />
 		<h2>Modify the RSS Feed - <input type="checkbox" name="metadata_feed_modify" <?PHP if(trim(get_option("metadata_feed_modify"))=="true"){ echo "checked"; } ?> /></h2>
-		<h2>Modify the Page / Post - <input type="checkbox" name="metadata_page_modify" <?PHP if(trim(get_option("metadata_page_modify"))=="true"){ echo "checked"; } ?> /></h2>
+		<h2>Modify the Page / Post / Custom Post Type - <input type="checkbox" name="metadata_page_modify" <?PHP if(trim(get_option("metadata_page_modify"))=="true"){ echo "checked"; } ?> /></h2>
 		<h2>Content to modify page / post with</h2>
 		<textarea name="content_to_add" cols=130 rows=10><?PHP echo stripslashes(get_option("content_to_add")); ?></textarea>
 		<div>
 			<p>The following shortcuts can be used</p>
 			<p>%creator% - displays the DC:Creator </p>
-			<p>%subject" - displays the DC:Subject </p>
-			<p>%title" - displays the DC:Title </p>
-			<p>%description" - displays the DC:Description </p>
-			<p>%source" - displays the DC:Type  </p>
-			<p>%coverage" - displays the DC:Coverage </p>
-			<p>%relation" - displays the DC:Relation </p>
-			<p>%publisher" - displays the DC:Publisher </p>
-			<p>%contributor" - displays the DC:Contributor </p>
-			<p>%rights" - displays the DC:Rights </p>
-			<p>%format" - displays the DC:Format </p>
-			<p>%language - displays the	DC:Language </p>
+			<p>%subject% - displays the DC:Subject </p>
+			<p>%title% - displays the DC:Title </p>
+			<p>%description% - displays the DC:Description </p>
+			<p>%source% - displays the DC:Type  </p>
+			<p>%coverage% - displays the DC:Coverage </p>
+			<p>%relation% - displays the DC:Relation </p>
+			<p>%publisher% - displays the DC:Publisher </p>
+			<p>%contributor% - displays the DC:Contributor </p>
+			<p>%rights% - displays the DC:Rights </p>
+			<p>%format% - displays the DC:Format </p>
+			<p>%language% - displays the	DC:Language </p>
 		</div>
 		<p class="submit">
 		<input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />

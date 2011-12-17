@@ -8,7 +8,7 @@
 
 		Description: Add Dublin Core to an item within a blog post
 
-		Version: 0.92
+		Version: 0.93
 
 		Author: Pgogy
 

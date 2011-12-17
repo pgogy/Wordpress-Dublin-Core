@@ -2,8 +2,8 @@
 Contributors: pgogy
 Tags: dublin core, dc, metadata
 Requires at least: 3.0.0
-Tested up to: 3.1
-Stable tag: 0.92
+Tested up to: 3.3
+Stable tag: 0.93
 
 Allows a user to add dublin core metadata (of their choice) to a wordpress post.
 
@@ -22,6 +22,12 @@ e.g.
 3. Visit the settings page for the plugin - No other configuration is required.
 
 == Changelog ==
+
+= 0.93 =
+Support for posts and custom post types
+
+= 0.92 =
+Improved language support
 
 = 0.91 =
 Neatened the admin menu

@@ -1,6 +1,6 @@
 <?PHP
 
-	function draw_dublincore_menu(){		
+	function draw_dublincore_menu(){
 		
 		$string = get_option('metadata_nodes');
 		
@@ -536,15 +536,17 @@
 	}
 
 	function dublincore_add_menu($output){
-	
+		
 		add_meta_box( 'dublincore_id', 'Add Dublin Core',"draw_dublincore_menu","post","normal","high");
+		add_meta_box( 'dublincore_id', 'Add Dublin Core',"draw_dublincore_menu","page","normal","high");
+		add_meta_box( 'dublincore_id', 'Add Dublin Core',"draw_dublincore_menu","custom_post_type","normal","high");
 	
 	}
 	
 	function create_dublin_core_text(){
 	
 		global $post;
-	
+			
 		$append = get_option("content_to_add");
 		
 		if (get_post_meta($post->ID,'dublin_core_author')){
