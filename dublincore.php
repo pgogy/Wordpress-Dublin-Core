@@ -8,7 +8,7 @@
 
 		Description: Add Dublin Core to an item within a blog post
 
-		Version: 0.93
+		Version: 0.94
 
 		Author: Pgogy
 
@@ -17,8 +17,7 @@
 	*/
 
 	require_once("dublincore_ajax.php");
-
-	
+	require_once("dublincore_theme_functions.php");
 
 	require_once("dublincore_admin.php");
 	

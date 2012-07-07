@@ -316,6 +316,12 @@
 				
 			wp_nonce_field('dublincore_savepost','dublincore_savepost');
 		
+			echo "<p>Go to <a href='" . get_site_url() . "/wp-admin/options-general.php?page=dublincore'>the Dublin Core Setup Page</a> to set up the DC elements you wish to catalogue.</p>";
+		
+		}else{
+		
+			echo "<p>Please visit <a href='" . get_site_url() . "/wp-admin/options-general.php?page=dublincore'>the Dublin Core Setup Page</a> to set up the DC elements you wish to catalogue.</p>";
+		
 		}
 
 	}
@@ -543,11 +549,11 @@
 	
 	}
 	
-	function create_dublin_core_text(){
+	function create_dublin_core_text($variable){
 	
 		global $post;
 			
-		$append = get_option("content_to_add");
+		$append = get_option($variable);
 		
 		if (get_post_meta($post->ID,'dublin_core_author')){
 			
@@ -667,7 +673,7 @@
 	
 	function dublin_core_shortcode( $atts ) {		
 
-		return create_dublin_core_text();
+		return create_dublin_core_text("content_for_shortcode");
 		
 	}
 	
@@ -679,7 +685,7 @@
 	
 		if(get_option('metadata_page_modify')=="true"){
 		
-			return $output . create_dublin_core_text();
+			return create_dublin_core_text("content_to_add_before") . $output . create_dublin_core_text("content_to_add");
 		
 		}else{
 		
