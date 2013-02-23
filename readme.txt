@@ -2,14 +2,18 @@
 Contributors: pgogy
 Tags: dublin core, dc, metadata
 Requires at least: 3.0.0
-Tested up to: 3.4
-Stable tag: 0.94
+Tested up to: 3.5
+Stable tag: 0.95
 
-Allows a user to add dublin core metadata (of their choice) to a wordpress post. Also supports a new function library so dublin core can be added to themes.
+Allows a user to add dublin core metadata (of their choice) to a wordpress post. 
 
 == Description ==
 
 This plugin allows a user to specifiy which parts of the dublin core namespace they wish to use and then adds extra fields to the post / page pages to allow for submissions of this data.
+For support please see http://www.pgogy.com and http://www.pgogy.com/code/groups/wordpress/dublin-core-metadata/
+
+[vimeo https://vimeo.com/60035853]
+[vimeo https://vimeo.com/60035849]
 
 == Installation ==
 

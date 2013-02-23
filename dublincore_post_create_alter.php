@@ -567,7 +567,7 @@
 			
 			$subject = get_post_meta($post->ID,'dublin_core_subject');
 				
-			$append = str_replace("%csubject%",$subject[0],$append);
+			$append = str_replace("%subject%",$subject[0],$append);
 		
 		}
 		
