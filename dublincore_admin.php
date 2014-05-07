@@ -17,7 +17,8 @@
 		<input type="checkbox" name="subject" <?PHP if(trim(get_option("dc_subject"))=="true"){ echo "checked"; } ?> /> DC:Subject <br />
 		<input type="checkbox" name="title" <?PHP if(trim(get_option("dc_title"))=="true"){ echo "checked"; } ?> /> DC:Title <br />
 		<input type="checkbox" name="description" <?PHP if(trim(get_option("dc_description"))=="true"){ echo "checked"; } ?> /> DC:Description <br />
-		<input type="checkbox" name="source" <?PHP if(trim(get_option("dc_source"))=="true"){ echo "checked"; } ?> /> DC:Type  <br />
+		<input type="checkbox" name="source" <?PHP if(trim(get_option("dc_source"))=="true"){ echo "checked"; } ?> /> DC:Source  <br />
+		<input type="checkbox" name="type" <?PHP if(trim(get_option("dc_type"))=="true"){ echo "checked"; } ?> /> DC:Type  <br />
 		<input type="checkbox" name="coverage" <?PHP if(trim(get_option("dc_coverage"))=="true"){ echo "checked"; } ?> /> DC:Coverage <br />
 		<input type="checkbox" name="relation" <?PHP if(trim(get_option("dc_relation"))=="true"){ echo "checked"; } ?> /> DC:Relation <br />
 		<input type="checkbox" name="publisher" <?PHP if(trim(get_option("dc_publisher"))=="true"){ echo "checked"; } ?> /> DC:Publisher <br />
@@ -37,7 +38,8 @@
 			<p>%subject% - displays the DC:Subject </p>
 			<p>%title% - displays the DC:Title </p>
 			<p>%description% - displays the DC:Description </p>
-			<p>%source% - displays the DC:Type  </p>
+			<p>%source% - displays the DC:Source  </p>
+			<p>%type% - displays the DC:Type  </p>
 			<p>%coverage% - displays the DC:Coverage </p>
 			<p>%relation% - displays the DC:Relation </p>
 			<p>%publisher% - displays the DC:Publisher </p>
@@ -66,6 +68,7 @@
     	register_setting( 'dublincore', 'dc_title');
     	register_setting( 'dublincore', 'dc_description');
 		register_setting( 'dublincore', 'dc_source');
+		register_setting( 'dublincore', 'dc_type');
 		register_setting( 'dublincore', 'dc_coverage');
 		register_setting( 'dublincore', 'dc_relation');
 		register_setting( 'dublincore', 'dc_publisher');
@@ -137,6 +140,15 @@
 					}else{
 					
 						update_option("dc_source","false");
+					
+					}
+					if($_POST['type']=="on"){
+					
+						update_option("dc_type","true");
+					
+					}else{
+					
+						update_option("dc_type","false");
 					
 					}
 					if($_POST['coverage']=="on"){
