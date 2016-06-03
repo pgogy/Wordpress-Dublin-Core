@@ -328,217 +328,221 @@
 	
 	function save_dublincore($post_id){
 		
-		if ( !wp_verify_nonce( $_POST['dublincore_savepost'], 'dublincore_savepost' )) {				
-    		return $post_id;
-  		}
-		  
-		if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) 
-			return $post_id;
+		if(isset($_POST['dublincore_savepost'])){
+		
+			if ( !wp_verify_nonce( $_POST['dublincore_savepost'], 'dublincore_savepost' )) {				
+				return $post_id;
+			}
+			  
+			if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) 
+				return $post_id;
 
-		if('page'==$_POST['post_type']){
-    		if(!current_user_can('edit_page',$post_id))
-      			return $post_id;
-  		}else{
-    		if ( !current_user_can('edit_post',$post_id))
-      			return $post_id;
-  		}	
-  		  
-  		if(isset($_POST['dublin_core_author'])){	
-	
-			if (get_post_meta($post_id,'dublin_core_author')){
-			  
-				update_post_meta($post_id, 'dublin_core_author', $_POST['dublin_core_author']);
-			  
+			if('page'==$_POST['post_type']){
+				if(!current_user_can('edit_page',$post_id))
+					return $post_id;
 			}else{
+				if ( !current_user_can('edit_post',$post_id))
+					return $post_id;
+			}	
 			  
-				add_post_meta($post_id, 'dublin_core_author', $_POST['dublin_core_author'],1);		  
+			if(isset($_POST['dublin_core_author'])){	
+		
+				if (get_post_meta($post_id,'dublin_core_author')){
+				  
+					update_post_meta($post_id, 'dublin_core_author', $_POST['dublin_core_author']);
+				  
+				}else{
+				  
+					add_post_meta($post_id, 'dublin_core_author', $_POST['dublin_core_author'],1);		  
+				  
+				}
 			  
 			}
-		  
-		}
-		  
-		if(isset($_POST['dublin_core_subject'])){	
-		  
-			if (get_post_meta($post_id,'dublin_core_subject')){
 			  
-			  	update_post_meta($post_id, 'dublin_core_subject', $_POST['dublin_core_subject']);
+			if(isset($_POST['dublin_core_subject'])){	
 			  
-			}else{
-			  
-			  	add_post_meta($post_id, 'dublin_core_subject', $_POST['dublin_core_subject'],1);		  
+				if (get_post_meta($post_id,'dublin_core_subject')){
+				  
+					update_post_meta($post_id, 'dublin_core_subject', $_POST['dublin_core_subject']);
+				  
+				}else{
+				  
+					add_post_meta($post_id, 'dublin_core_subject', $_POST['dublin_core_subject'],1);		  
+				  
+				}
 			  
 			}
-		  
-		}
-		  
-		if(isset($_POST['dublin_core_title'])){	
-		  
-			if (get_post_meta($post_id,'dublin_core_title')){
 			  
-			  	update_post_meta($post_id, 'dublin_core_title', $_POST['dublin_core_title']);
+			if(isset($_POST['dublin_core_title'])){	
 			  
-			}else{
+				if (get_post_meta($post_id,'dublin_core_title')){
+				  
+					update_post_meta($post_id, 'dublin_core_title', $_POST['dublin_core_title']);
+				  
+				}else{
+				  
+					add_post_meta($post_id, 'dublin_core_title', $_POST['dublin_core_title'],1);		  
+				  
+				} 
 			  
-			  	add_post_meta($post_id, 'dublin_core_title', $_POST['dublin_core_title'],1);		  
+			}
 			  
-			} 
-		  
-		}
-		  
-		if(isset($_POST['dublin_core_description'])){	
-		  
-			if (get_post_meta($post_id,'dublin_core_description')){
+			if(isset($_POST['dublin_core_description'])){	
 			  
-			  	update_post_meta($post_id, 'dublin_core_description', $_POST['dublin_core_description']);
+				if (get_post_meta($post_id,'dublin_core_description')){
+				  
+					update_post_meta($post_id, 'dublin_core_description', $_POST['dublin_core_description']);
+				  
+				}else{
+				  
+					add_post_meta($post_id, 'dublin_core_description', $_POST['dublin_core_description'],1);		  
+				  
+				} 
 			  
-			}else{
+			}
 			  
-			  	add_post_meta($post_id, 'dublin_core_description', $_POST['dublin_core_description'],1);		  
+			if(isset($_POST['dublin_core_type'])){	
 			  
-			} 
-		  
-		}
-		  
-		if(isset($_POST['dublin_core_type'])){	
-		  
-			if (get_post_meta($post_id,'dublin_core_type')){
+				if (get_post_meta($post_id,'dublin_core_type')){
+				  
+					update_post_meta($post_id, 'dublin_core_type', $_POST['dublin_core_type']);
+				  
+				}else{
+				  
+					add_post_meta($post_id, 'dublin_core_type', $_POST['dublin_core_type'],1);		  
+				  
+				} 
 			  
-			  	update_post_meta($post_id, 'dublin_core_type', $_POST['dublin_core_type']);
+			}
 			  
-			}else{
+			if(isset($_POST['dublin_core_source'])){	
 			  
-			  	add_post_meta($post_id, 'dublin_core_type', $_POST['dublin_core_type'],1);		  
+				if (get_post_meta($post_id,'dublin_core_source')){
+				  
+					update_post_meta($post_id, 'dublin_core_source', $_POST['dublin_core_source']);
+				  
+				}else{
+				  
+					add_post_meta($post_id, 'dublin_core_source', $_POST['dublin_core_source'],1);		  
+				  
+				} 
 			  
-			} 
-		  
-		}
-		  
-		if(isset($_POST['dublin_core_source'])){	
-		  
-			if (get_post_meta($post_id,'dublin_core_source')){
+			}
 			  
-			  	update_post_meta($post_id, 'dublin_core_source', $_POST['dublin_core_source']);
+			if(isset($_POST['dublin_core_coverage'])){	
 			  
-			}else{
+				if (get_post_meta($post_id,'dublin_core_coverage')){
+				  
+					update_post_meta($post_id, 'dublin_core_coverage', $_POST['dublin_core_coverage']);
+				  
+				}else{
+				  
+					add_post_meta($post_id, 'dublin_core_coverage', $_POST['dublin_core_coverage'],1);		  
+				  
+				} 
 			  
-			  	add_post_meta($post_id, 'dublin_core_source', $_POST['dublin_core_source'],1);		  
+			}
 			  
-			} 
-		  
-		}
-		  
-		if(isset($_POST['dublin_core_coverage'])){	
-		  
-			if (get_post_meta($post_id,'dublin_core_coverage')){
+			if(isset($_POST['dublin_core_relation'])){	
 			  
-			  	update_post_meta($post_id, 'dublin_core_coverage', $_POST['dublin_core_coverage']);
+				  if (get_post_meta($post_id,'dublin_core_relation')){
+				  
+						 update_post_meta($post_id, 'dublin_core_relation', $_POST['dublin_core_relation']);
+				  
+				  }else{
+				  
+						 add_post_meta($post_id, 'dublin_core_relation', $_POST['dublin_core_relation'],1);		  
+				  
+				  } 
 			  
-			}else{
+			}
 			  
-			  	add_post_meta($post_id, 'dublin_core_coverage', $_POST['dublin_core_coverage'],1);		  
+			if(isset($_POST['dublin_core_publisher'])){	
+
+			  if (get_post_meta($post_id,'dublin_core_publisher')){
 			  
-			} 
-		  
-		}
-		  
-		if(isset($_POST['dublin_core_relation'])){	
-		  
-			  if (get_post_meta($post_id,'dublin_core_relation')){
-			  
-			  		 update_post_meta($post_id, 'dublin_core_relation', $_POST['dublin_core_relation']);
+				update_post_meta($post_id, 'dublin_core_publisher', $_POST['dublin_core_publisher']);
 			  
 			  }else{
 			  
-			  		 add_post_meta($post_id, 'dublin_core_relation', $_POST['dublin_core_relation'],1);		  
+				add_post_meta($post_id, 'dublin_core_publisher', $_POST['dublin_core_publisher'],1);		  
 			  
 			  } 
-		  
-		}
-		  
-		if(isset($_POST['dublin_core_publisher'])){	
 
-		  if (get_post_meta($post_id,'dublin_core_publisher')){
-		  
-			update_post_meta($post_id, 'dublin_core_publisher', $_POST['dublin_core_publisher']);
-		  
-		  }else{
-		  
-			add_post_meta($post_id, 'dublin_core_publisher', $_POST['dublin_core_publisher'],1);		  
-		  
-		  } 
+			}
 
-		}
+			if(isset($_POST['dublin_core_contributor'])){	
 
-		if(isset($_POST['dublin_core_contributor'])){	
-
-		  if (get_post_meta($post_id,'dublin_core_contributor')){
-		  
-			update_post_meta($post_id, 'dublin_core_contributor', $_POST['dublin_core_contributor']);
-		  
-		  }else{
-		  
-			add_post_meta($post_id, 'dublin_core_contributor', $_POST['dublin_core_contributor'],1);		  
-		  
-		  } 
-
-		}  
-
-		if(isset($_POST['dublin_core_rights'])){	
-
-		  if (get_post_meta($post_id,'dublin_core_rights')){
-		  
-			update_post_meta($post_id, 'dublin_core_rights', $_POST['dublin_core_rights']);
-		  
-		  }else{
-		  
-			add_post_meta($post_id, 'dublin_core_rights', $_POST['dublin_core_rights'],1);		  
-		  
-		  } 
-
-		}
-
-		if(isset($_POST['dublin_core_format'])){	
-
-		  if (get_post_meta($post_id,'dublin_core_format')){
-		  
-			update_post_meta($post_id, 'dublin_core_format', $_POST['dublin_core_format']);
-		  
-		  }else{
-		  
-			add_post_meta($post_id, 'dublin_core_format', $_POST['dublin_core_format'],1);		  
-		  
-		  } 
-
-		}
-
-		if(isset($_POST['dublin_core_language'])){	
-
-		  if (get_post_meta($post_id,'dublin_core_language')){
-		  
-			update_post_meta($post_id, 'dublin_core_language', $_POST['dublin_core_language']);
-		  
-		  }else{
-		  
-			add_post_meta($post_id, 'dublin_core_language', $_POST['dublin_core_language'],1);		  
-		  
-		  } 
-
-		}
-		  
-		if(isset($_POST['dublin_core_instructionalmethod'])){	
-		  
-			if (get_post_meta($post_id,'dublin_core_instructionalmethod')){
+			  if (get_post_meta($post_id,'dublin_core_contributor')){
 			  
-			  	update_post_meta($post_id, 'dublin_core_instructionalmethod', $_POST['dublin_core_instructionalmethod']);
+				update_post_meta($post_id, 'dublin_core_contributor', $_POST['dublin_core_contributor']);
 			  
-			}else{
+			  }else{
 			  
-			  	add_post_meta($post_id, 'dublin_core_instructionalmethod', $_POST['dublin_core_instructionalmethod'],1);		  
+				add_post_meta($post_id, 'dublin_core_contributor', $_POST['dublin_core_contributor'],1);		  
 			  
-			} 
-		  
+			  } 
+
+			}  
+
+			if(isset($_POST['dublin_core_rights'])){	
+
+			  if (get_post_meta($post_id,'dublin_core_rights')){
+			  
+				update_post_meta($post_id, 'dublin_core_rights', $_POST['dublin_core_rights']);
+			  
+			  }else{
+			  
+				add_post_meta($post_id, 'dublin_core_rights', $_POST['dublin_core_rights'],1);		  
+			  
+			  } 
+
+			}
+
+			if(isset($_POST['dublin_core_format'])){	
+
+			  if (get_post_meta($post_id,'dublin_core_format')){
+			  
+				update_post_meta($post_id, 'dublin_core_format', $_POST['dublin_core_format']);
+			  
+			  }else{
+			  
+				add_post_meta($post_id, 'dublin_core_format', $_POST['dublin_core_format'],1);		  
+			  
+			  } 
+
+			}
+
+			if(isset($_POST['dublin_core_language'])){	
+
+			  if (get_post_meta($post_id,'dublin_core_language')){
+			  
+				update_post_meta($post_id, 'dublin_core_language', $_POST['dublin_core_language']);
+			  
+			  }else{
+			  
+				add_post_meta($post_id, 'dublin_core_language', $_POST['dublin_core_language'],1);		  
+			  
+			  } 
+
+			}
+			  
+			if(isset($_POST['dublin_core_instructionalmethod'])){	
+			  
+				if (get_post_meta($post_id,'dublin_core_instructionalmethod')){
+				  
+					update_post_meta($post_id, 'dublin_core_instructionalmethod', $_POST['dublin_core_instructionalmethod']);
+				  
+				}else{
+				  
+					add_post_meta($post_id, 'dublin_core_instructionalmethod', $_POST['dublin_core_instructionalmethod'],1);		  
+				  
+				} 
+			  
+			}
+			
 		}
-		  
+		
 	}
 
 	function dublincore_add_menu($output){

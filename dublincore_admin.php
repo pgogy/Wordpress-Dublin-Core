@@ -97,7 +97,7 @@
 			
 				if($_POST['option_page']=="dublincore"){
 				
-					if($_POST['creator']=="on"){
+					if(isset($_POST['creator'])){
 					
 						update_option("dc_creator","true");
 					
@@ -106,7 +106,7 @@
 						update_option("dc_creator","false");
 					
 					}
-					if($_POST['subject']=="on"){
+					if(isset($_POST['subject'])){
 					
 						update_option("dc_subject","true");
 					
@@ -115,7 +115,7 @@
 						update_option("dc_subject","false");
 					
 					}
-					if($_POST['title']=="on"){
+					if(isset($_POST['title'])){
 					
 						update_option("dc_title","true");
 					
@@ -124,7 +124,7 @@
 						update_option("dc_title","false");
 					
 					}
-					if($_POST['description']=="on"){
+					if(isset($_POST['description'])){
 					
 						update_option("dc_description","true");
 					
@@ -133,7 +133,7 @@
 						update_option("dc_description","false");
 					
 					}
-					if($_POST['source']=="on"){
+					if(isset($_POST['source'])){
 					
 						update_option("dc_source","true");
 					
@@ -142,7 +142,7 @@
 						update_option("dc_source","false");
 					
 					}
-					if($_POST['type']=="on"){
+					if(isset($_POST['type'])){
 					
 						update_option("dc_type","true");
 					
@@ -151,7 +151,7 @@
 						update_option("dc_type","false");
 					
 					}
-					if($_POST['coverage']=="on"){
+					if(isset($_POST['coverage'])){
 					
 						update_option("dc_coverage","true");
 					
@@ -160,7 +160,7 @@
 						update_option("dc_coverage","false");
 					
 					}
-					if($_POST['relation']=="on"){
+					if(isset($_POST['relation'])){
 					
 						update_option("dc_relation","true");
 					
@@ -169,7 +169,7 @@
 						update_option("dc_relation","false");
 					
 					}
-					if($_POST['publisher']=="on"){
+					if(isset($_POST['publisher'])){
 					
 						update_option("dc_publisher","true");
 					
@@ -178,7 +178,7 @@
 						update_option("dc_publisher","false");
 					
 					}
-					if($_POST['contributor']=="on"){
+					if(isset($_POST['contributor'])){
 					
 						update_option("dc_contributor","true");
 					
@@ -187,7 +187,7 @@
 						update_option("dc_contributor","false");
 					
 					}
-					if($_POST['rights']=="on"){
+					if(isset($_POST['rights'])){
 					
 						update_option("dc_rights","true");
 					
@@ -196,7 +196,7 @@
 						update_option("dc_rights","false");
 					
 					}
-					if($_POST['format']=="on"){
+					if(isset($_POST['format'])){
 					
 						update_option("dc_format","true");
 					
@@ -205,7 +205,7 @@
 						update_option("dc_format","false");
 					
 					}
-					if($_POST['language']=="on"){
+					if(isset($_POST['language'])){
 					
 						update_option("dc_language","true");
 					
@@ -214,7 +214,7 @@
 						update_option("dc_language","false");
 					
 					}
-					if($_POST['imethod']=="on"){
+					if(isset($_POST['imethod'])){
 					
 						update_option("dc_imethod","true");
 					
@@ -223,7 +223,7 @@
 						update_option("dc_imethod","false");
 					
 					} 
-					if($_POST['metadata_feed_modify']=="on"){
+					if(isset($_POST['metadata_feed_modify'])){
 					
 						update_option("metadata_feed_modify","true");
 					
@@ -232,7 +232,7 @@
 						update_option("metadata_feed_modify","false");
 					
 					} 
-					if($_POST['metadata_page_modify']=="on"){
+					if(isset($_POST['metadata_page_modify'])){
 					
 						update_option("metadata_page_modify","true");
 					
