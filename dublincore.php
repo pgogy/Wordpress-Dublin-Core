@@ -5,7 +5,7 @@
 		Plugin Name: Dublin Core Metadata
 		Plugin URI: http://www.pgogy.com/code/dublin-core-metadata
 		Description: Add Dublin Core to an item within a blog post
-		Version: 0.97
+		Version: 0.98
 		Author: Pgogy
 		Plugin URI: http://www.pgogy.com/code/groups/wordpress/dublin-core-metadata/
 		Author URI: http://www.pgogy.com
